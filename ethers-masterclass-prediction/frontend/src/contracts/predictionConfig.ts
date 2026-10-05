@@ -16,3 +16,10 @@ export const PREDICTION_HUB_ABI = [
   "event MarketResolved(uint256 indexed marketId, uint8 outcome)",
   "event WinningsClaimed(uint256 indexed marketId, address indexed user, uint256 amount)"
 ];
+
+
+export const CONTRACTS = {
+  predictionHub: {
+    address: PREDICTION_HUB_ADDRESS,
+    abi: PREDICTION_HUB_ABI,
+  },}

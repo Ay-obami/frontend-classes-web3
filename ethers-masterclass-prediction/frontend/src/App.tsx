@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { MarketCard } from './components/MarketCard';
-import { useWeb3Wallet, usePredictionMarket } from './hooks/useWeb3Prediction';
+import { usePredictionMarket } from './hooks/useWeb3Prediction';
 import { PredictionMarketData, MarketOutcome } from './types/prediction';
 import { AlertCircle, Plus, Loader2, ArrowUpRight, ShieldCheck, Zap, BarChart3, TrendingUp, Compass } from 'lucide-react';
+import { useWalletConnection } from './hooks/useWalletConnection';
 
 export function App() {
-  const { wallet, connectWallet } = useWeb3Wallet();
+  const { wallet, connectWallet } = useWalletConnection();
   const { markets, isLoading, error, placeBet, claimWinnings } =
     usePredictionMarket(wallet.address);
 
